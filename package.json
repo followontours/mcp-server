@@ -1,0 +1,18 @@
+{
+  "name": "@followontours/mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Follow On Tours — bespoke cricket travel. Search tours, explore destinations, check match schedules, and submit enquiries from any AI assistant.",
+  "keywords": ["mcp", "mcp-server", "travel", "cricket", "cricket-travel", "tours", "bespoke-travel", "ai", "anthropic", "claude"],
+  "homepage": "https://www.followontours.com/connect",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/followontours/mcp-server"
+  },
+  "mcpServers": {
+    "followontours": {
+      "url": "https://www.followontours.com/api/mcp",
+      "transport": "streamable-http"
+    }
+  },
+  "license": "UNLICENSED"
+}
