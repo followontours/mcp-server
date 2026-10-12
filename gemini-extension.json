@@ -1,0 +1,11 @@
+{
+  "name": "follow-on-tours",
+  "version": "1.0.2",
+  "description": "Bespoke sports travel: cricket, golf, rugby, polo and playing tours. See what's on sale, check indicative prices and request a quote. Tour operator, ABTOT 5718.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "followontours": {
+      "httpUrl": "https://www.followontours.com/api/mcp"
+    }
+  }
+}

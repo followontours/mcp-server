@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "followontours": {
+      "type": "streamable-http",
+      "url": "https://www.followontours.com/api/mcp"
+    }
+  }
+}

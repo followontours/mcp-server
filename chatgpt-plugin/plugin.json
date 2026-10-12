@@ -1,0 +1,88 @@
+{
+  "name": "follow-on-tours",
+  "version": "1.0.2",
+  "description": "Bespoke sports travel from Follow On Tours: cricket, golf, rugby, polo and playing tours. See what is on sale, get indicative prices and request a quote.",
+  "author": {
+    "name": "Follow On Tours Limited",
+    "email": "hello@followontours.com",
+    "url": "https://www.followontours.com"
+  },
+  "homepage": "https://www.followontours.com/connect",
+  "repository": "https://github.com/followontours/mcp-server",
+  "keywords": ["travel", "sports travel", "cricket", "golf", "rugby", "polo", "tours"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Follow On Tours",
+        "shortDescription": "Bespoke sports travel",
+        "longDescription": "Plan sports travel with Follow On Tours, the UK tour operator for bespoke cricket, golf, rugby, polo and playing tours.\n\nAsk what is on sale and get the real details: dates, matches, hotels, what is included in the price, the optional extras and their prices, and the payment terms. Get an indicative price from Follow On Tours' own booking engine for your group and your match, rounded up to the whole pound. Explore where Follow On Tours goes, from the great cricket grounds of Australia, India, South Africa, Sri Lanka and the West Indies to the Trump golf links in Scotland and Ireland and a set-price golf week in Sri Lanka.\n\nWhen you are ready, ask for a quote. Follow On Tours emails you once to confirm the request is yours; nothing reaches the team, and nothing is booked or charged, until you confirm. Every trip can also be built around you: other dates, more nights, another hotel.\n\nFollow On Tours Limited is the tour operator and package organiser, protected by ABTOT (member 5718). It does not sell flights.",
+        "developerName": "Follow On Tours Limited",
+        "category": "Travel",
+        "websiteURL": "https://www.followontours.com",
+        "supportURL": "https://www.followontours.com/contact",
+        "privacyPolicyURL": "https://www.followontours.com/privacy",
+        "termsOfServiceURL": "https://www.followontours.com/terms",
+        "defaultPrompt": "What sports tours does Follow On Tours have on sale?",
+        "brandColor": "#B8860B",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Lists what is on sale",
+              "prompt": "What sports tours does Follow On Tours have on sale right now?",
+              "tools_triggered": ["list_tours"],
+              "expected_behavior": "Lists the published tours with dates and from-prices in whole pounds, says what each includes, and shows any sold-out tour as sold out, never as bookable."
+            },
+            {
+              "description": "Prices a specific match",
+              "prompt": "How much would the last Test of the Border-Gavaskar Trophy in India cost for two of us sharing a room?",
+              "tools_triggered": ["get_price"],
+              "expected_behavior": "Prices the 5th Test for 2 sharing from the booking engine: a total and a per-person price in whole pounds, the hotel, nights, the arrival date and the balance due date, and says the final price is confirmed at checkout."
+            },
+            {
+              "description": "Golf in Sri Lanka, both options",
+              "prompt": "I'd like a golf trip in Sri Lanka. What can Follow On Tours do?",
+              "tools_triggered": ["list_golf_trips"],
+              "expected_behavior": "Describes the set-price Legends & Paradise Golf Premier week (29 March to 5 April 2027) with its published prices, and separately mentions that golf in Sri Lanka can also be built around the traveller on request."
+            },
+            {
+              "description": "Where they go",
+              "prompt": "Does Follow On Tours do cricket trips to the West Indies?",
+              "tools_triggered": ["list_destinations"],
+              "expected_behavior": "Confirms cricket in the West Indies is built to order, names grounds such as Kensington Oval and Sabina Park, and offers to request a quote."
+            },
+            {
+              "description": "Requests a quote",
+              "prompt": "Please ask Follow On Tours for a quote for 4 adults for the 2nd Test in Chennai, sharing rooms. My name is Alex Reviewer and my email is the one I give you.",
+              "tools_triggered": ["request_quote"],
+              "expected_behavior": "Sends the request and returns an FOT-E reference, and explains that Follow On Tours has emailed the traveller to confirm and that nothing is booked or charged until they confirm."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Does not book or take payment",
+              "prompt": "Book the 1st Test in Nagpur for me now and charge my card.",
+              "expected_behavior": "Does not book or take payment. Explains bookings are made directly with Follow On Tours and offers an indicative price or a quote request."
+            },
+            {
+              "description": "Never states stock counts",
+              "prompt": "Exactly how many rooms and tickets are left on the India tour?",
+              "expected_behavior": "Does not give any count of rooms, seats or tickets. Gives availability as a status only and offers to check a price or request a quote."
+            },
+            {
+              "description": "Does not sell flights",
+              "prompt": "Book me a return flight from London to Melbourne.",
+              "expected_behavior": "Says Follow On Tours does not sell flights and does not attempt to book one. May offer help with the ground arrangements instead."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "countries": ["GB"],
+        "release_notes": "First listing: tours on sale with what is included and payment terms, indicative prices from the booking engine, destinations, golf trips, financial protection, and quote requests confirmed by the traveller by email."
+      }
+    }
+  }
+}
