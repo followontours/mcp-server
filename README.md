@@ -2,7 +2,7 @@
 
 **Bespoke sports travel, powered by AI: cricket, golf, rugby, polo and playing tours.** Connect any MCP-compatible assistant to live tour data, indicative prices, destinations, golf trips and financial-protection facts, and request a quote for a traveller.
 
-Registry name: `com.followontours/sports-travel` (replaces `com.followontours/cricket-travel`).
+Registry name: `com.followontours/cricket-travel` (all sports since 1.0.2).
 
 [![MCP](https://img.shields.io/badge/MCP-Streamable%20HTTP-blue)](https://modelcontextprotocol.io)
 [![Status](https://img.shields.io/badge/Status-Live-brightgreen)]()

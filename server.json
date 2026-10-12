@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "com.followontours/sports-travel",
+  "name": "com.followontours/cricket-travel",
   "title": "Follow On Tours – bespoke sports travel",
   "description": "Bespoke sports travel: cricket, golf, rugby, polo and playing tours. Tour operator, ABTOT 5718.",
   "repository": {
